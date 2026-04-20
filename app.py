@@ -1,6 +1,10 @@
+import os
 import torch
 import streamlit as st
 from diffusers import DiffusionPipeline
+
+# Hugging Face Token (best practice: set in Streamlit secrets)
+HF_TOKEN = "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"
 
 # Load pipeline
 st.write("Loading Z-Image-Turbo pipeline...")
@@ -8,6 +12,7 @@ pipe = DiffusionPipeline.from_pretrained(
     "Tongyi-MAI/Z-Image-Turbo",
     torch_dtype=torch.float32,
     low_cpu_mem_usage=True,
+    use_auth_token=HF_TOKEN   # <-- Token added here
 )
 pipe.to("cpu")
 st.write("Pipeline loaded!")
