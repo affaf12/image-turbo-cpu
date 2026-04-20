@@ -4,7 +4,7 @@ import streamlit as st
 from diffusers import DiffusionPipeline
 
 # Hugging Face Token from Streamlit secrets
-HF_TOKEN = st.secrets["HF_TOKEN"]
+HF_TOKEN = st.secrets"HF_TOKEN = "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" "
 
 # Load pipeline
 st.write("Loading Z-Image-Turbo pipeline...")
